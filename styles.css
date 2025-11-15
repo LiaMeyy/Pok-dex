@@ -32,7 +32,7 @@
     background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     align-items: center;
 }
 .cart {
@@ -44,3 +44,73 @@
     width: 30%;
     margin: 3%;
 }
+
+.badge {
+    padding: 6px 10px;
+    margin: 3px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.normal   { background:#f7f7ff; }
+.fire     { background:#EE8130; }
+.water    { background:#6390F0; }
+.electric { background:#F7D02C; }
+.grass    { background:#7AC74C; }
+.ice      { background:#96D9D6; }
+.fighting { background:#C22E28; }
+.poison   { background:#A33EA1; }
+.ground   { background:#E2BF65; }
+.flying   { background:#A98FF3; }
+.psychic  { background:#F95587; }
+.bug      { background:#A6B91A; }
+.rock     { background:#B6A136; }
+.ghost    { background:#735797; }
+.dragon   { background:#6F35FC; }
+.dark     { background:#705746; }
+.steel    { background:#B7B7CE; }
+.fairy    { background:#D685AD; }
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 50px
+}
+.header h1 {
+    font-size: 50px;
+}
+.header h3 {
+ font-size: 30px;
+}
+.imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cts{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 50px;
+}
+#typeIcon img {
+    display: block;
+    margin: 0 10px;
+}
+.barrera {
+    height: 3px; 
+    margin: 30px 50px;
+
+    background: repeating-linear-gradient(
+        to right,
+        #000 0px,
+        #000 40px,   
+        transparent 50px,
+        transparent 60px 
+    );
+}
+
+
