@@ -102,15 +102,17 @@
 }
 .barrera {
     height: 3px; 
-    margin: 30px 50px;
+    margin: 20px 50px;
 
     background: repeating-linear-gradient(
         to right,
         #000 0px,
-        #000 40px,   
+        #000 50px,   
         transparent 50px,
         transparent 60px 
     );
 }
-
+.imagen img{
+    width: 70%;
+}
 
