@@ -6,8 +6,8 @@
 .search {
     display: flex;
     justify-content: center;
-    padding: 30px;
-    background-color: rgb(216, 0, 0);
+    padding: 20px;
+    background-color: rgb(195, 24, 24);
 }
 .search input {
     padding: 10px;
@@ -27,23 +27,126 @@
     cursor: pointer;
 }
 
-.Content {
+.card-container {
+    display:none;
+    width: 30%;
+    height: 85%;
+    perspective: 1200px;
+}
+.content{
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     align-items: center;
 }
-.cart {
-    background-color: #ffffff;
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .8s ease;
+}
+/* movimiento de la tarjeta */
+.card.flipped {
+    transform: rotateY(180deg);
+}
+.front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 30%;
-    margin: 3%;
 }
+
+.front, .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+.back {
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("https://www.pngkit.com/png/detail/241-2416981_pokemon-card-back-png-pokemon-tcg-card-back.png");
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 20px;
+}
+.back-inner{
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 14px;
+    padding: 20px;
+    width: 65%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    overflow-y: auto;
+}
+
+
+.stats-card {
+    width: 90%;
+    max-width: 330px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 3px solid #d4af37;   
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.stats-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: #2a2a2a;
+    letter-spacing: 1px;
+}
+
+
+.stat-block {
+    margin-bottom: 20px;
+}
+
+
+.stat-name {
+    font-size: 14px;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+
+.stat-bar {
+    width: 100%;
+    height: 14px;
+    background: #e2e2e2;
+    border-radius: 6px;
+    border: 1px solid #b5b5b5;
+    overflow: hidden;
+}
+
+.stat-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ff0000, #ff9900);
+    transition: width 700ms cubic-bezier(.16,.84,.44,1);
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.4);
+}
+
 
 .badge {
     padding: 6px 10px;
@@ -55,7 +158,7 @@
     font-size: 14px;
 }
 
-.normal   { background:#f7f7ff; }
+.normal   { background:#d2d2d6; }
 .fire     { background:#EE8130; }
 .water    { background:#6390F0; }
 .electric { background:#F7D02C; }
@@ -74,45 +177,72 @@
 .steel    { background:#B7B7CE; }
 .fairy    { background:#D685AD; }
 
+
 .header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 50px
+    margin: 0 50px;
+    width: 90%;
 }
 .header h1 {
     font-size: 50px;
 }
 .header h3 {
- font-size: 30px;
+  opacity: 0.7;
+ font-size: 25px;
 }
 .imagen {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
 }
 .cts{
     display: flex;
     justify-content: space-between;
-    margin: 20px 50px;
+    align-items: center;
+    margin: 20px;
+    width: 90%;
 }
 #typeIcon img {
     display: block;
     margin: 0 10px;
 }
 .barrera {
-    height: 3px; 
+    padding: 2px; 
     margin: 20px 50px;
-
-    background: repeating-linear-gradient(
-        to right,
-        #000 0px,
-        #000 50px,   
-        transparent 50px,
-        transparent 60px 
-    );
+    background-color: rgb(255, 255, 255);
 }
 .imagen img{
     width: 70%;
+        filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.4));
+
+}
+.carac{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.carac h4{
+color:grey;
+font-size: 14px;
+font-weight: normal;
 }
 
+.types{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    background: #222;
+    padding: 20px 20px;
+    color: white;
+    border-radius: 20px;
+    gap:20px;
+}
+.types h2{
+    margin-bottom: 10px;
+}
