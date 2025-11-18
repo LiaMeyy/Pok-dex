@@ -32,6 +32,7 @@
     width: 30%;
     height: 85%;
     perspective: 1200px;
+    ;
 }
 .content{
     font-family: Arial, sans-serif;
@@ -46,6 +47,7 @@
 .card {
     width: 100%;
     height: 100%;
+    margin: 40px;
     position: relative;
     transform-style: preserve-3d;
     transition: transform .8s ease;
@@ -246,4 +248,82 @@ font-weight: normal;
 }
 .types h2{
     margin-bottom: 10px;
+}
+
+
+@media (max-width: 600px) {
+
+    .card-container {
+        width: 90%;
+        height: 100%;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .header h3 {
+        font-size: 18px;
+    }
+
+    .imagen img {
+        width: 90%;
+    }
+
+    .cts {
+        flex-direction: column;
+        gap: 10px;
+        margin: 10px 0;
+    }
+
+    .types {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .stats-title {
+        font-size: 18px;
+    }
+
+    .back-inner {
+        width: 85%;
+        padding: 15px;
+    }
+    .search {
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 600px) and (max-width: 900px) {
+
+    .card-container {
+        width: 60%;
+        height: 100%;
+    }
+
+    .header h1 {
+        font-size: 40px;
+    }
+
+    .imagen img {
+        width: 80%;
+    }
+
+    .types {
+        width: 85%;
+    }
+}
+
+
+@media (min-width: 900px) {
+
+    .card-container {
+        width: 30%;
+        height: 100%;
+    }
+
+    .imagen img {
+        width: 70%;
+    }
 }
